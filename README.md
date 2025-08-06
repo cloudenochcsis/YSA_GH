@@ -56,15 +56,56 @@ ysa-ghana-website/
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+- **Node.js 18+** (Download from [nodejs.org](https://nodejs.org/))
+- **npm** (comes with Node.js) or **yarn**
+- **Git** (Download from [git-scm.com](https://git-scm.com/))
 
 ### Installation
 
+#### For Windows Users:
+
+1. **Install Node.js:**
+   - Download and install Node.js from [nodejs.org](https://nodejs.org/)
+   - Choose the LTS version (recommended)
+   - Verify installation by opening Command Prompt or PowerShell and running:
+   ```cmd
+   node --version
+   npm --version
+   ```
+
+2. **Install Git:**
+   - Download Git from [git-scm.com](https://git-scm.com/)
+   - During installation, choose "Git Bash" and "Git from the command line"
+
+3. **Clone the repository:**
+   ```cmd
+   git clone git@github.com:cloudenochcsis/YSA_GH.git
+   cd YSA_GH
+   ```
+
+4. **Install dependencies:**
+   ```cmd
+   npm install
+   ```
+   
+   If you encounter permission issues, try:
+   ```cmd
+   npm install --legacy-peer-deps
+   ```
+
+5. **Start the development server:**
+   ```cmd
+   npm run dev
+   ```
+
+6. **Open your browser and visit:** `http://localhost:3000`
+
+#### For macOS/Linux Users:
+
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd ysa-ghana-website
+git clone git@github.com:cloudenochcsis/YSA_GH.git
+cd YSA_GH
 ```
 
 2. Install dependencies:
@@ -81,13 +122,21 @@ npm run dev
 
 ## 📝 Available Scripts
 
-- `npm run dev` - Start development server
+### Development
+- `npm run dev` - Start development server (Windows: `npm run dev`)
 - `npm run build` - Build for production
 - `npm run generate` - Generate static site
 - `npm run preview` - Preview production build
+
+### Code Quality
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues
 - `npm run type-check` - Run TypeScript type checking
+
+### Windows-Specific Notes:
+- Use **Command Prompt**, **PowerShell**, or **Git Bash** as your terminal
+- If you encounter `EACCES` permission errors, try running as Administrator
+- For path issues, use forward slashes `/` or double backslashes `\\`
 
 ## 🎨 Customization
 
@@ -220,6 +269,54 @@ Add testing with Vitest (optional):
 ```bash
 npm install -D @nuxt/test-utils vitest
 ```
+
+## 🔧 Windows Troubleshooting
+
+### Common Issues and Solutions:
+
+1. **Node.js Installation Issues:**
+   ```cmd
+   # Check if Node.js is properly installed
+   node --version
+   npm --version
+   
+   # If not found, add Node.js to PATH or reinstall
+   ```
+
+2. **Permission Errors:**
+   ```cmd
+   # Try installing with legacy peer deps
+   npm install --legacy-peer-deps
+   
+   # Or run as Administrator
+   # Right-click Command Prompt → "Run as administrator"
+   ```
+
+3. **Port Already in Use:**
+   ```cmd
+   # If port 3000 is busy, kill the process
+   netstat -ano | findstr :3000
+   taskkill /PID <PID_NUMBER> /F
+   
+   # Or use a different port
+   npm run dev -- --port 3001
+   ```
+
+4. **Git SSH Issues:**
+   ```cmd
+   # If SSH doesn't work, use HTTPS instead
+   git clone https://github.com/cloudenochcsis/YSA_GH.git
+   ```
+
+5. **Path Issues:**
+   - Use forward slashes `/` in file paths
+   - Or escape backslashes `\\` in Windows paths
+   - Consider using Git Bash for better Unix-like experience
+
+### Recommended Windows Setup:
+- **Terminal**: Git Bash or Windows Terminal
+- **Editor**: VS Code with Vue.js extensions
+- **Node Version Manager**: Use `nvm-windows` for managing Node.js versions
 
 ## 📱 Browser Support
 

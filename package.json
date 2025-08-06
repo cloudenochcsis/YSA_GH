@@ -5,12 +5,15 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "dev:host": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "type-check": "nuxt typecheck"
+    "type-check": "nuxt typecheck",
+    "clean": "rm -rf .nuxt dist .output",
+    "clean:win": "rmdir /s /q .nuxt dist .output 2>nul || echo Clean completed"
   },
   "dependencies": {
     "@nuxt/content": "^2.13.4",
