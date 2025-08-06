@@ -13,7 +13,13 @@
     "lint:fix": "eslint . --fix",
     "type-check": "nuxt typecheck",
     "clean": "rm -rf .nuxt dist .output",
-    "clean:win": "rmdir /s /q .nuxt dist .output 2>nul || echo Clean completed"
+    "clean:win": "rmdir /s /q .nuxt dist .output 2>nul || echo Clean completed",
+    "docker:build": "docker build -t ysa-ghana:latest .",
+    "docker:build-dev": "docker build -f Dockerfile.dev -t ysa-ghana:dev .",
+    "docker:run": "docker run -p 3000:3000 ysa-ghana:latest",
+    "docker:run-dev": "docker run -p 3000:3000 -v $(pwd):/app ysa-ghana:dev",
+    "docker:compose-dev": "docker-compose up ysa-ghana-dev",
+    "docker:compose-prod": "docker-compose --profile production up ysa-ghana-prod"
   },
   "dependencies": {
     "@nuxt/content": "^2.13.4",

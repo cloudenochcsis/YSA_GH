@@ -270,6 +270,70 @@ Add testing with Vitest (optional):
 npm install -D @nuxt/test-utils vitest
 ```
 
+## � Doncker Setup
+
+### Prerequisites for Docker:
+- **Docker Desktop** (Windows/Mac) or **Docker Engine** (Linux)
+- Download from [docker.com](https://www.docker.com/products/docker-desktop/)
+
+### Quick Start with Docker:
+
+#### Development Mode:
+```bash
+# Build and run development container
+docker-compose up ysa-ghana-dev
+
+# Or using Docker directly
+docker build -f Dockerfile.dev -t ysa-ghana:dev .
+docker run -p 3000:3000 -v $(pwd):/app ysa-ghana:dev
+```
+
+#### Production Mode:
+```bash
+# Build and run production container
+docker-compose --profile production up ysa-ghana-prod
+
+# Or using Docker directly
+docker build -t ysa-ghana:latest .
+docker run -p 3000:3000 ysa-ghana:latest
+```
+
+### Docker Scripts (Linux/Mac):
+```bash
+# Build both images
+./docker-scripts/build.sh
+
+# Run development server
+./docker-scripts/run-dev.sh
+
+# Run production server
+./docker-scripts/run-prod.sh
+```
+
+### Docker Commands:
+```bash
+# Build development image
+docker build -f Dockerfile.dev -t ysa-ghana:dev .
+
+# Build production image
+docker build -t ysa-ghana:latest .
+
+# Run development (with hot reload)
+docker run -p 3000:3000 -v $(pwd):/app ysa-ghana:dev
+
+# Run production
+docker run -p 3000:3000 ysa-ghana:latest
+
+# Using docker-compose
+docker-compose up ysa-ghana-dev     # Development
+docker-compose --profile production up ysa-ghana-prod  # Production
+```
+
+### Docker Environment Variables:
+- `NODE_ENV` - Set to 'development' or 'production'
+- `NUXT_HOST` - Host binding (default: 0.0.0.0)
+- `NUXT_PORT` - Port number (default: 3000)
+
 ## 🔧 Windows Troubleshooting
 
 ### Common Issues and Solutions:

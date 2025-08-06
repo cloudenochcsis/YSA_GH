@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Development service
+  ysa-ghana-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: ysa-ghana-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - ysa-network
+    restart: unless-stopped
+
+  # Production service
+  ysa-ghana-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ysa-ghana-prod
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+    networks:
+      - ysa-network
+    restart: unless-stopped
+    profiles:
+      - production
+
+networks:
+  ysa-network:
+    driver: bridge
