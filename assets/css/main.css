@@ -1,0 +1,236 @@
+/* Custom styles for YSA Ghana Website - Petroleum Industry Theme */
+
+/* Custom CSS Variables for Petroleum Color Scheme */
+:root {
+  --petroleum-primary: #1a472a; /* Deep forest green */
+  --petroleum-secondary: #d97706; /* Amber/oil color */
+  --petroleum-accent: #92400e; /* Dark amber */
+  --petroleum-gold: #f59e0b; /* Gold */
+  --petroleum-dark: #1f2937; /* Charcoal */
+  --petroleum-light: #f3f4f6; /* Light gray */
+  --petroleum-success: #059669; /* Green */
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Custom focus styles for accessibility */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Petroleum Industry Custom Classes */
+.bg-petroleum-primary {
+  background-color: var(--petroleum-primary);
+}
+
+.bg-petroleum-secondary {
+  background-color: var(--petroleum-secondary);
+}
+
+.bg-petroleum-accent {
+  background-color: var(--petroleum-accent);
+}
+
+.bg-petroleum-gold {
+  background-color: var(--petroleum-gold);
+}
+
+.text-petroleum-primary {
+  color: var(--petroleum-primary);
+}
+
+.text-petroleum-secondary {
+  color: var(--petroleum-secondary);
+}
+
+.text-petroleum-gold {
+  color: var(--petroleum-gold);
+}
+
+.border-petroleum-secondary {
+  border-color: var(--petroleum-secondary);
+}
+
+.hover\:bg-petroleum-secondary:hover {
+  background-color: var(--petroleum-secondary);
+}
+
+.hover\:bg-petroleum-accent:hover {
+  background-color: var(--petroleum-accent);
+}
+
+/* Gradient backgrounds for petroleum theme */
+.bg-petroleum-gradient {
+  background: linear-gradient(135deg, var(--petroleum-primary) 0%, var(--petroleum-accent) 100%);
+}
+
+.bg-petroleum-hero {
+  background: linear-gradient(135deg, #1a472a 0%, #065f46 50%, #92400e 100%);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-gray-600 {
+    color: #000000;
+  }
+  
+  .text-gray-300 {
+    color: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Custom utility classes */
+.container {
+  max-width: 1200px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Loading states */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Custom button hover effects */
+.btn-hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image optimization */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Form improvements */
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Force light theme for contact form */
+.light-theme input,
+.light-theme textarea,
+.light-theme select {
+  background-color: white !important;
+  color: #1f2937 !important;
+  border-color: #d1d5db !important;
+}
+
+.light-theme input:focus,
+.light-theme textarea:focus,
+.light-theme select:focus {
+  background-color: white !important;
+  color: #1f2937 !important;
+  border-color: var(--petroleum-secondary) !important;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1) !important;
+}
+
+.light-theme label {
+  color: #374151 !important;
+}
