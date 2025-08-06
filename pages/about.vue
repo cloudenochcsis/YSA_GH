@@ -34,7 +34,7 @@
           </div>
           <div class="relative">
             <NuxtImg 
-              src="/images/about-company.jpg" 
+              src="/images/front-view.png" 
               alt="YSA Ghana office building"
               class="rounded-lg shadow-lg w-full h-96 object-cover"
               loading="lazy"
@@ -145,13 +145,13 @@
           <div 
             v-for="member in teamMembers" 
             :key="member.id"
-            class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
           >
-            <div class="aspect-w-3 aspect-h-4">
+            <div class="w-full">
               <NuxtImg 
-                :src="member.image || '/images/team/placeholder.jpg'" 
+                :src="member.image" 
                 :alt="member.name"
-                class="w-full h-64 object-cover"
+                class="w-full h-48 object-cover"
                 loading="lazy"
               />
             </div>

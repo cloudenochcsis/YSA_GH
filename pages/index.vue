@@ -131,7 +131,7 @@
           
           <div class="relative">
             <NuxtImg 
-              src="/images/why-choose-us.jpg" 
+              src="/images/profession-team-meeting.png" 
               alt="Professional team meeting"
               class="rounded-lg shadow-lg w-full h-96 object-cover"
               loading="lazy"

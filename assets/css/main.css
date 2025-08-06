@@ -1,14 +1,14 @@
 /* Custom styles for YSA Ghana Website - Petroleum Industry Theme */
 
-/* Custom CSS Variables for Petroleum Color Scheme */
+/* Custom CSS Variables for YSA Ghana Color Scheme */
 :root {
-  --petroleum-primary: #1a472a; /* Deep forest green */
-  --petroleum-secondary: #d97706; /* Amber/oil color */
-  --petroleum-accent: #92400e; /* Dark amber */
-  --petroleum-gold: #f59e0b; /* Gold */
-  --petroleum-dark: #1f2937; /* Charcoal */
-  --petroleum-light: #f3f4f6; /* Light gray */
-  --petroleum-success: #059669; /* Green */
+  --petroleum-primary: #4B1EFF; /* Deep Purple - Used for Y stroke and text */
+  --petroleum-secondary: #FF3366; /* Bright Pink/Red - Used for S and A letters */
+  --petroleum-accent: #3a16c4; /* Darker shade of primary for hover states */
+  --petroleum-gold: #FF3366; /* Using the pink/red for gold elements */
+  --petroleum-dark: #1f2937; /* Charcoal for text */
+  --petroleum-light: #f8f9fa; /* Off-white for backgrounds */
+  --petroleum-success: #10b981; /* Green for success states */
 }
 
 /* Smooth scrolling */
@@ -123,7 +123,15 @@ html {
 }
 
 .bg-petroleum-hero {
-  background: linear-gradient(135deg, #1a472a 0%, #065f46 50%, #92400e 100%);
+  background: linear-gradient(135deg, var(--petroleum-primary) 0%, #3a16c4 50%, var(--petroleum-secondary) 100%);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* High contrast mode support */

@@ -15,6 +15,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt'
   ],
 
+  // Google Maps configuration
+  runtimeConfig: {
+    public: {
+      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || ''
+    }
+  },
+
   // TypeScript configuration
   typescript: {
     typeCheck: false

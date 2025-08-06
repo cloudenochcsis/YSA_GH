@@ -4,10 +4,13 @@
       <div class="flex items-center justify-between h-16 lg:h-20">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <NuxtLink to="/" class="flex items-center space-x-3">
-            <div class="bg-petroleum-primary text-white rounded-lg p-2">
-              <UIcon name="lucide:fuel" class="w-6 h-6" />
-            </div>
+          <NuxtLink to="/" class="flex items-center space-x-2">
+            <img 
+              src="/images/company logo.png" 
+              alt="YSA Ghana Limited" 
+              class="h-12 w-auto"
+              loading="eager"
+            />
             <div class="hidden sm:block">
               <h1 class="text-xl font-bold text-gray-900">YSA Ghana</h1>
               <p class="text-xs text-gray-600">Limited</p>

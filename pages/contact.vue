@@ -141,7 +141,8 @@
                     Office Address
                   </h3>
                   <p class="text-gray-600">
-                    {{ companyInfo.address }}
+                    {{ companyInfo.address }}<br>
+                    {{ companyInfo.postalAddress }}
                   </p>
                 </div>
               </div>
@@ -157,9 +158,12 @@
                   <h3 class="text-lg font-semibold text-gray-900 mb-1">
                     Phone Number
                   </h3>
-                  <p class="text-gray-600">
-                    <a :href="`tel:${companyInfo.phone}`" class="hover:text-petroleum-secondary">
+                  <p class="text-gray-600 space-y-1">
+                    <a :href="`tel:${companyInfo.phone.replace(/\s+/g, '')}`" class="block hover:text-petroleum-secondary">
                       {{ companyInfo.phone }}
+                    </a>
+                    <a :href="`tel:${companyInfo.phone2.replace(/\s+/g, '')}`" class="block hover:text-petroleum-secondary">
+                      {{ companyInfo.phone2 }}
                     </a>
                   </p>
                 </div>
@@ -264,16 +268,28 @@
           </p>
         </div>
         
-        <!-- Placeholder for Google Map -->
-        <div class="bg-gray-300 rounded-lg h-96 flex items-center justify-center">
-          <div class="text-center">
-            <UIcon name="lucide:map-pin" class="w-16 h-16 text-gray-500 mx-auto mb-4" />
-            <p class="text-gray-600">
-              Google Map integration will be added here
-            </p>
-            <p class="text-sm text-gray-500 mt-2">
-              Location: {{ companyInfo.address }}
-            </p>
+        <!-- OpenStreetMap Container -->
+        <div class="rounded-lg overflow-hidden shadow-lg h-[500px] relative">
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            :src="`https://www.openstreetmap.org/export/embed.html?bbox=-0.2175%2C5.5833%2C-0.1575%2C5.6233&layer=mapnik&marker=5.6033%2C-0.1875`"
+            class="border-0">
+          </iframe>
+          <div class="absolute bottom-4 right-4 bg-white p-2 rounded-lg shadow-md">
+            <a 
+              href="https://www.openstreetmap.org/?mlat=5.6033&mlon=-0.1875#map=15/5.6033/-0.1875"
+              target="_blank"
+              class="flex items-center text-blue-600 hover:underline text-sm"
+              rel="noopener noreferrer"
+            >
+              <UIcon name="lucide:external-link" class="w-4 h-4 mr-1" />
+              View Larger Map
+            </a>
           </div>
         </div>
       </div>
@@ -282,7 +298,7 @@
 </template>
 
 <script setup>
-import { z } from 'zod'
+import { z } from 'zod';
 
 // SEO Meta
 useSeoMeta({
@@ -292,10 +308,10 @@ useSeoMeta({
   ogTitle: 'Contact Us - YSA Ghana Limited',
   ogDescription: 'Get in touch with our professional consultancy team for your business needs.',
   ogType: 'website'
-})
+});
 
 // Company data
-const { companyInfo, services } = useCompanyData()
+const { companyInfo, services } = useCompanyData();
 
 // Form schema
 const contactSchema = z.object({

@@ -7,9 +7,11 @@ export const useCompanyData = () => {
     description: 'YSA Ghana Limited is a leading consultancy firm specializing in petroleum brokerage, project management, procurement, general merchandise, and comprehensive business consultancy. We deliver exceptional value through innovative solutions and professional excellence.',
     mission: 'To provide world-class consultancy services that drive sustainable growth and success for our clients across various industries in Ghana and beyond.',
     vision: 'To be the most trusted and innovative consultancy firm in West Africa, setting industry standards for excellence and professionalism.',
-    address: 'Accra, Ghana', // Update with actual address
-    phone: '+233 XX XXX XXXX', // Update with actual phone
-    email: 'info@ysaghana.com', // Update with actual email
+    address: 'No. 58 Nile Street, Sowutuom - Nsunfa',
+    postalAddress: 'P. O. Box AN 11909, Accra - North',
+    phone: '+233500023697',
+    phone2: '+233240214637',
+    email: 'aboagye_y@yahoo.co.uk',
     socialMedia: {
       linkedin: 'https://linkedin.com/company/ysa-ghana',
       twitter: 'https://twitter.com/ysaghana',
@@ -31,7 +33,7 @@ export const useCompanyData = () => {
         'Supply Chain Optimization',
         'Regulatory Compliance Support'
       ],
-      image: '/images/petroleum-brokerage.jpg'
+      image: '/images/petroleum.png'
     },
     {
       id: 'project-management',
@@ -46,7 +48,7 @@ export const useCompanyData = () => {
         'Stakeholder Management',
         'Performance Monitoring'
       ],
-      image: '/images/project-management.jpg'
+      image: '/images/project-management.png'
     },
     {
       id: 'procurement',
@@ -61,7 +63,7 @@ export const useCompanyData = () => {
         'Cost Analysis & Reduction',
         'Compliance Management'
       ],
-      image: '/images/procurement.jpg'
+      image: '/images/procurement.png'
     },
     {
       id: 'general-merchandise',
@@ -76,7 +78,7 @@ export const useCompanyData = () => {
         'Market Research',
         'Customer Support'
       ],
-      image: '/images/general-merchandise.jpg'
+      image: '/images/merchandise.png'
     },
     {
       id: 'business-consultancy',
@@ -91,28 +93,28 @@ export const useCompanyData = () => {
         'Organizational Development',
         'Digital Transformation'
       ],
-      image: '/images/business-consultancy.jpg'
+      image: '/images/business-consult.png'
     }
   ]
 
   const teamMembers = [
     {
       id: 'ceo',
-      name: 'John Doe', // Replace with actual names
+      name: 'Yaw Sarpong Agyeman', // CEO's actual name
       position: 'Chief Executive Officer',
-      bio: 'With over 15 years of experience in the energy sector, John leads YSA Ghana with a vision for excellence and innovation.',
-      image: '/images/team/ceo.jpg',
-      linkedin: 'https://linkedin.com/in/johndoe',
-      email: 'john.doe@ysaghana.com'
+      bio: 'With over 15 years of experience in the energy sector, Yaw leads YSA Ghana with a vision for excellence and innovation.',
+      image: '/images/chief exec.png',
+      linkedin: 'https://linkedin.com/in/yawsarpongagyeman',
+      email: 'yaw@ysaghana.com'
     },
     {
       id: 'coo',
-      name: 'Jane Smith', // Replace with actual names
+      name: 'Kwame Ofori', // Replace with actual COO's name
       position: 'Chief Operating Officer',
-      bio: 'Jane brings extensive project management expertise and operational excellence to drive our service delivery.',
-      image: '/images/team/coo.jpg',
-      linkedin: 'https://linkedin.com/in/janesmith',
-      email: 'jane.smith@ysaghana.com'
+      bio: 'With extensive experience in operations and management, Kwame ensures the smooth execution of all company projects and initiatives.',
+      image: '/images/coo.png',
+      linkedin: 'https://linkedin.com/in/kwameofori',
+      email: 'kwame@ysaghana.com'
     }
     // Add more team members as needed
   ]
